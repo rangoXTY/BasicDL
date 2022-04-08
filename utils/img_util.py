@@ -22,7 +22,7 @@ def img2tensor(imgs, bgr2rgb=True, float32=True):
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img = torch.from_numpy(img.transpose(2, 0, 1))
         if float32:
-            img = img.float().div(255.)
+            img = img.float()
         return img
 
     if isinstance(imgs, list):
